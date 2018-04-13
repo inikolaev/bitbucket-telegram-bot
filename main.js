@@ -80,6 +80,12 @@ function handleRepoPush(req, res) {
   //    var commits = change.commits || [];
   //  });
 
+  // BitBucket is sending two messages with repo:push event, but we only want to handle one
+  if (event.push && event.push.changes && event.push.changes.length == 1 && !event.push.changes[0].new) {
+    console.log("No new changes present in the event, skipping");
+    return;
+  }
+
   sendMessage(message);
 }
 
