@@ -104,7 +104,7 @@ function handleIssueUpdated(req, res) {
 
 function handleIssueCommentCreated(req, res) {
   var event = req.body;
-  var message = bold(event.actor.display_name) + " added a new comment to the issue [#" + event.issue.id + ": " + event.issue.title + "](" + event.issue.links.html.href + ")"; 
+  var message = bold(event.actor.display_name) + " added a new comment to the issue [#" + event.issue.id + ": " + event.issue.title + "](" + event.comment.links.html.href + ")"; 
 
   sendMessage(message);  
 }
