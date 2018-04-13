@@ -1,0 +1,19 @@
+{
+  "name": "bitbucket-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram Bot which listens for BitBucket events and publishes messages to Telegram chat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inikolaev/bitbucket-telegram-bot.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Igor Nikolaev",
+    "email": "igor.nikolaev@nikisoft.ru"
+  },
+  "dependencies": {
+    "restify": "^7.1.1",
+    "restify-clients": "^2.0.1"
+  },
+  "main": "main.js"
+}
