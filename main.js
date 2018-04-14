@@ -72,7 +72,6 @@ function bold(text) {
 
 function handleRepoPush(req, res) {
   var event = req.body;
-  var message = bold(event.actor.display_name) + " pushed changes into repository [" + event.repository.name + "](" + event.repository.links.html.href + ")";
 
   // TODO: Don't remember what did I want to do with this
   //  var changes = event.push && event.push.changes ? event.push.changes : [];
@@ -85,6 +84,12 @@ function handleRepoPush(req, res) {
     console.log("No new changes present in the event, skipping");
     return;
   }
+
+  var message = bold(event.actor.display_name)
+              + " pushed changes into "
+              + event.push.changes[0].new.type
+              + " [" + event.push.changes[0].new.name + "](" + event.push.changes[0].new.links.html + ")"
+              + " in repository [" + event.repository.name + "](" + event.repository.links.html.href + ")";
 
   sendMessage(message);
 }
