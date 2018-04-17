@@ -15,6 +15,11 @@ Bot which receives BitBucket events and retraslates them into Telegram chat. The
 
 ## Configuration
 
+Bot can be configured with the following environment variables:
+
+* `BOT_API_KEY` - An API key of the bot to prevent unauthorized access
+* `TELEGRAM_API_KEY` - Authentication token used to make requests to [Telegram Bot API](https://core.telegram.org/bots/api)
+* `TELEGRAM_CHAT_ID` - The ID of a Telegram chat where bot should send messages to
 
 ## Running the bot
 
