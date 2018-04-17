@@ -6,6 +6,7 @@ Bot which receives BitBucket events and retraslates them into Telegram chat. The
 * `issue:created`
 * `issue:updated`
 * `issue:comment_created`
+* `pullrequest:approved`
 * `pullrequest:created`
 * `pullrequest:updated`
 * `pullrequest:comment_created`

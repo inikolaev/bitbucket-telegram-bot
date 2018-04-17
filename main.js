@@ -29,6 +29,7 @@ var bitbucketEventHandlers = {
   "issue:created" : handleIssueCreated,
   "issue:updated" : handleIssueUpdated,
   "issue:comment_created": handleIssueCommentCreated,
+  "pullrequest:approved": handlePullRequestApproved,
   "pullrequest:created": handlePullRequestCreated,
   "pullrequest:updated": handlePullRequestUpdated,
   "pullrequest:comment_created": handlePullRequestCommentCreated,
@@ -118,6 +119,13 @@ function handleIssueCommentCreated(req, res) {
   var message = bold(event.actor.display_name) + " added a new comment to the issue [#" + event.issue.id + ": " + event.issue.title + "](" + event.comment.links.html.href + ")"; 
 
   sendMessage(message);  
+}
+
+function handlePullRequestApproved(req, res) {
+  var event = req.body;
+  var message = bold(event.actor.display_name) + " approved pull request [" + event.pullrequest.title + "](" + event.pullrequest.links.html.href + ")";
+
+  sendMessage(message);
 }
 
 function handlePullRequestCreated(req, res) {
