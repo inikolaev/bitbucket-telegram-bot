@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "test-with-coverage": "nyc --reporter=html mocha",
+    "test-with-coverage": "nyc --all --reporter=html mocha",
     "start": "node lib/main.js"
   },
   "directories": {
