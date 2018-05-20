@@ -2,7 +2,7 @@ FROM inikolaev/alpine-nodejs
 
 WORKDIR /app
 
-ADD lib/main.js /app/lib/
+ADD lib/ /app/lib/
 ADD package.json /app
 
 RUN npm install --no-optional
