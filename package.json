@@ -14,6 +14,7 @@
   "scripts": {
     "test": "mocha",
     "test-with-coverage": "nyc --all --reporter=html mocha",
+    "codecov": "nyc report --reporter=text-lcov mocha > coverage.lcov",
     "start": "node lib/main.js"
   },
   "directories": {
