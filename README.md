@@ -62,7 +62,12 @@ docker run -it \
 ### Deployment to Heroku
 
 ```bash
+# Log into Heroku
 heroku login
+
+# Log into Heroku container registry
 heroku container:login
+
+# Build Docker image and push it into Heroku contaienr registry
 heroku container:push --app <Heroku Application Name> web
 ```
