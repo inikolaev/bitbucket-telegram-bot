@@ -11,9 +11,23 @@
     "name": "Igor Nikolaev",
     "email": "igor.nikolaev@nikisoft.ru"
   },
+  "scripts": {
+    "test": "mocha",
+    "test-with-coverage": "nyc --all --reporter=html mocha",
+    "start": "node lib/main.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
   "dependencies": {
     "restify": "^7.1.1",
     "restify-clients": "^2.0.1"
   },
-  "main": "main.js"
+  "main": "main.js",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1"
+  }
 }

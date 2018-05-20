@@ -23,7 +23,37 @@ Bot can be configured with the following environment variables:
 
 ## Running the bot
 
+### Running locally with `npm`
 
+```
+# Install dependencies, but skip optional ones
+npm install --no-optional
+
+# Start bot 
+# Note: set environment variables mentioned above in order to test integration with Telegram
+npm start
+
+# Here's how you can set environment variables to test integration, `BOT_API_KEY` is optional
+TELEGRAM_API_KEY=<Your Auth Token> TELEGRAM_CHAT_ID=<Your Chat ID> npm start
+```
+
+### Running locally with Docker
+
+```
+# First build Docker image
+docker build -t bitbucket-telegram-bot .
+
+# Start bot
+# Note: set environment variables mentioned above in order to test integration with Telegram
+docker run -it -p 5000:5000 bitbucket-telegram-bot
+
+# Here's how you can set environment variables to test integration, `BOT_API_KEY` is optional
+docker run -it \
+           -p 5000:5000 \
+           -e TELEGRAM_API_KEY=<Your Auth Token> \
+           -e TELEGRAM_CHAT_ID=<Your Chat ID> \
+           bitbucket-telegram-bot
+```
 
 ## Deployment
 
@@ -31,5 +61,6 @@ Bot can be configured with the following environment variables:
 
 ```bash
 heroku login
+heroku container:login
 heroku container:push --app <Heroku Application Name> web
 ```
