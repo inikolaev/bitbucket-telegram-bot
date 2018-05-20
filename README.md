@@ -1,4 +1,5 @@
 # BitBucket Telegram Bot
+![Build Status](https://travis-ci.com/inikolaev/bitbucket-telegram-bot.svg?branch=master)
 
 Bot which receives BitBucket events and retraslates them into Telegram chat. The following events are supported:
 

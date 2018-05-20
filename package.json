@@ -12,8 +12,9 @@
     "email": "igor.nikolaev@nikisoft.ru"
   },
   "scripts": {
-    "test": "mocha",
-    "test-with-coverage": "nyc --all --reporter=html mocha",
+    "test": "nyc --all mocha",
+    "coverage": "nyc report --reporter=html",
+    "codecov": "nyc report --reporter=lcovonly && codecov",
     "start": "node lib/main.js"
   },
   "directories": {
@@ -28,6 +29,8 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
-    "nyc": "^11.7.1"
+    "nyc": "^11.7.1",
+    "sinon": "^5.0.7",
+    "codecov": "^3.0.2"
   }
 }

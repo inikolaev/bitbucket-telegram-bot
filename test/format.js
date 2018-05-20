@@ -54,4 +54,17 @@ describe('format.js', function () {
 
     expect(link(entity, "Custom title")).to.be.equal("[Custom title](http://example.com)");
   });
+
+  it('should escape special characters in link', function () {
+    var entity = {
+      title: "Entity title with [square] brackets",
+      links: {
+        html: {
+          href: "http://example.com"
+        }
+      }
+    };
+
+    expect(link(entity)).to.be.equal("[Entity title with \\[square\\] brackets](http://example.com)");
+  });
 });
