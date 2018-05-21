@@ -28,7 +28,7 @@ describe('handlers.js', function() {
           }]
         },
         repository: {
-          title: "Repository 1",
+          name: "Repository 1",
           links: {
             html: {
               href: "http://repository1.com"
@@ -59,7 +59,7 @@ describe('handlers.js', function() {
           }]
         },
         repository: {
-          title: "Repository 1",
+          name: "Repository 1",
           links: {
             html: {
               href: "http://repository1.com"
