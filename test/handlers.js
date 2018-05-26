@@ -90,7 +90,7 @@ describe('handlers.js', function() {
         }
     };
     var message = handlers.handleIssueCreated(request);
-    expect(message).to.be.equal("*John Dow* created a new issue [Issue 1](http://repository1.com/issues/1)");
+    expect(message).to.be.equal("*John Dow* created a new issue [#1: Issue 1](http://repository1.com/issues/1)");
   });
 
   it('should return issue updated message', function () {
@@ -109,7 +109,7 @@ describe('handlers.js', function() {
         }
     };
     var message = handlers.handleIssueUpdated(request);
-    expect(message).to.be.equal("*John Dow* updated issue [Issue 1](http://repository1.com/issues/1)");
+    expect(message).to.be.equal("*John Dow* updated issue [#1: Issue 1](http://repository1.com/issues/1)");
   });
 
   it('should return issue resolved message', function () {
@@ -133,7 +133,7 @@ describe('handlers.js', function() {
         }
     };
     var message = handlers.handleIssueUpdated(request);
-    expect(message).to.be.equal("*John Dow* resolved issue [Issue 1](http://repository1.com/issues/1)");
+    expect(message).to.be.equal("*John Dow* resolved issue [#1: Issue 1](http://repository1.com/issues/1)");
   });
 
   it('should return issue comment created message', function () {
@@ -160,7 +160,7 @@ describe('handlers.js', function() {
         }
     };
     var message = handlers.handleIssueCommentCreated(request);
-    expect(message).to.be.equal("*John Dow* added a new comment to the issue [Issue 1](http://repository1.com/issues/1#comment-1)");
+    expect(message).to.be.equal("*John Dow* added a new comment to the issue [#1: Issue 1](http://repository1.com/issues/1#comment-1)");
   });
 
   it('should return pull request approved message', function () {
