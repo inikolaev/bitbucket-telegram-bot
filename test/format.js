@@ -1,6 +1,5 @@
 var expect = require('chai').expect;
-var bold = require('../lib/format').bold;
-var link = require('../lib/format').link;
+var { bold, link, issueLink } = require('../lib/format');
 
 describe('format.js', function () {
   it('should format text as bold', function () {
@@ -66,5 +65,19 @@ describe('format.js', function () {
     };
 
     expect(link(entity)).to.be.equal("[Entity title with \\[square\\] brackets](http://example.com)");
+  });
+
+  it('should format issue link', function() {
+    var issue = {
+      id: 1,
+      title: "Issue title",
+      links: {
+        html: {
+          href: "http://example.com/issues/1"
+        }
+      }
+    };
+
+    expect(issueLink(issue)).to.be.equal("[#1: Issue title](http://example.com/issues/1)");
   });
 });
